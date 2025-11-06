@@ -89,7 +89,11 @@ class Common
         $title && $params['title'] = $title;
         $hash_id && $params['hash_id'] = $hash_id;
         $resize && $params['resize'] = $resize;
-        return U('/extends/ObjectStorage/callBack',$params,true,true);
+
+        $query = http_build_query($params);
+        // return U('/extends/ObjectStorage/callBack',$params,true,true);
+        $site_url = env('OBJECT_STORAGE_CALLBACK_URL', U('/extends/ObjectStorage/callBack',[],true,true));
+        return $site_url.'?'.$query;
     }
 
     public static function genObjectName($config, $ext = ''):string{

@@ -666,4 +666,6 @@ $res = $os_vendor->genClient('image')->uploadFile($file_path, $object, $options)
    - uploadError : 上传出错
    - deleteFile : 删除图片
    
-   
+## 自定义回调地址
+
+`.env` 文件中加入配置项 `OBJECT_STORAGE_CALLBACK_URL`，如：`OBJECT_STORAGE_CALLBACK_URL=http://your_domain.com/extends/ObjectStorage/callBack`   

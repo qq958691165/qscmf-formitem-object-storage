@@ -789,3 +789,7 @@ $res = $os_vendor->genClient('image')->uploadFile($file_path, $object, $options)
 ## 迁移说明
 
 若文件表不为 `qs_file_pic`，则使用 `.env` 文件配置 `OBJECT_STORAGE_FILE_TABLE_NAME` 来指定文件表名。
+
+## 自定义回调地址
+
+`.env` 文件中加入配置项 `OBJECT_STORAGE_CALLBACK_URL`，如：`OBJECT_STORAGE_CALLBACK_URL=http://your_domain.com/extends/ObjectStorage/callBack`
